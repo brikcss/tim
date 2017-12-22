@@ -1,0 +1,9 @@
+module.exports = data => {
+	const myData = {
+		one: 11111,
+		b: 'bbbbb',
+		custom: [5]
+	};
+
+	return myData;
+};

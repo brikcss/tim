@@ -1,0 +1,1 @@
+# <%= brik.name || 'brikcss component' %>

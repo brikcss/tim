@@ -1,0 +1,7 @@
+module.exports = () => {
+	const myData = {
+		custom: [9, 8, 7, 6]
+	};
+
+	return myData;
+};

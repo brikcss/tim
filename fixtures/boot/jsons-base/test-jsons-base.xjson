@@ -1,0 +1,7 @@
+module.exports = {
+	name: '@brikcss/tim',
+	version: '0.0.0-development',
+	description: 'Tim "The Toolman" is brikcss\'s utility tool belt for creating front end components.',
+	author: 'The Zimmee <thezimmee@gmail.com>',
+	homepage: 'https://github.com/brikcss/tim'
+};

@@ -1,0 +1,14 @@
+_tim:
+    extends: ../yamlExtended
+name: rc-test.yaml
+yamlLoaded: true
+array:
+    - 5
+    - 6
+    - 7
+    - 8
+object:
+    three:
+        a: no
+    two: false
+    last: 'all good'

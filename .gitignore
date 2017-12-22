@@ -1,0 +1,19 @@
+##
+# .gitignore
+# ----------
+# Files to ignore by [git](https://git-scm.com/).
+# @author brikcss <https://github.com/brikcss>
+# ---------------------------------------------------------------------
+##
+
+
+# Node.
+/node_modules
+
+# OS.
+.DS_Store
+
+# Test / build.
+/.temp
+/.briks
+/.nyc_output
