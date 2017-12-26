@@ -1,4 +1,4 @@
-_tim:
+_brik:
     extends: ../yamlExtended
 name: rc-test.yaml
 yamlLoaded: true

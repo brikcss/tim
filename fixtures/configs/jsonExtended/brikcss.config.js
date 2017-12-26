@@ -1,5 +1,5 @@
 module.exports = {
-	_tim: {
+	_brik: {
 		extends: '../extended/'
 	},
 	jsonExtendedLoaded: true

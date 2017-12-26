@@ -2,18 +2,25 @@
 
 ## Next / in progress
 
+- [ ] Create example of multiple boots with extends with `.brikcssrc.js`:
+	- [x] Move `_tim.boot` to `_brik`.
+	- [ ] In `boot/index.js`, allow for:
+		- `_brik.extends`: Compiles a brik/directory of files.
+		- `_brik.files`: Compiles files without any other configuration.
+	- [ ] Update "multiples" test to work by extending files.
 - [ ] Create each of the following "briks" / repos:
-	- [ ] Linting:
-		- [ ] git commit message linting (commitlint)
+	- [ ] Git commit message linting (commitlint)
+	- [ ] Code linting:
 		- [ ] eslint (including precommit hook)
 		- [ ] stylelint (including precommit hook)
-	- [ ] auto release to NPM and github
-	- [ ] git hooks:
+	- [ ] Auto release to NPM and github
+	- [ ] Git hooks:
 		- [ ] Ensure clean stage on commit
 		- [ ] Add source branch stamp to commit message
 	- [ ] SASS builds
 	- [ ] JS / webpack / babel builds
 	- [ ] Browsersync local development server
+	- [ ] Brik component that glues all the above together. NOTE: Test to make sure we can do this as is. If needed, update Tim and add tests.
 
 ## Committed
 

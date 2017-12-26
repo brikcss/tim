@@ -1,5 +1,5 @@
 {
-	"_tim": {
+	"_brik": {
 		"extends": "../jsonExtended"
 	},
 	"name": "rc-test.json",
