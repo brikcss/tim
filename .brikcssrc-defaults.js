@@ -1,4 +1,4 @@
-// This file should reflect all of tim's possible configuration options.
+// This file contains possible configuration options for a brik component.
 module.exports = userOptions => {
 	return {
 		_brik: {

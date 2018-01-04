@@ -39,6 +39,9 @@ Object.keys(cli).forEach(arg => {
 	}
 });
 
+// Set up commands that have subcommands.
+const subcommands = ['config'];
+
 /* [[END]] -------------------------------------------------------------------------------------- */
 
 /**
@@ -61,6 +64,11 @@ if (cli.command === 'boot' && !cli.files) {
 if (cli.command === 'root') {
 	// eslint-disable-next-line no-console
 	console.log(tim.utils.getRoot(cli.files[0]));
+} else if (subcommands.indexOf(cli.command) > -1) {
+	// If the command has subcommands, parse them here.
+	cli.subcommand = cli.files.slice(0);
+	cli.files = cli.files.slice(1);
+	tim[cli.command][cli.subcommand](cli);
 } else if (tim[cli.command]) {
 	// Run the script.
 	tim[cli.command](cli);
