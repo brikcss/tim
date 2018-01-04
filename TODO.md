@@ -2,12 +2,6 @@
 
 ## Next / in progress
 
-- [ ] Create example of multiple boots with extends with `.brikcssrc.js`:
-	- [x] Move `_tim.boot` to `_brik`.
-	- [ ] In `boot/index.js`, allow for:
-		- `_brik.extends`: Compiles a brik/directory of files.
-		- `_brik.files`: Compiles files without any other configuration.
-	- [ ] Update "multiples" test to work by extending files.
 - [ ] Create each of the following "briks" / repos:
 	- [ ] Git commit message linting (commitlint)
 	- [ ] Code linting:
@@ -34,6 +28,7 @@
 
 ## Maybe
 
+- [ ] Switch to [pnpm](https://www.npmjs.com/package/pnpm) for speed, efficiency, aliases, and hooks.
 - [ ] Feature: Add way to manage local npm package development with `npm link`.
 - [ ] Feature: options.copy -> an array of files to copy, not compile.
 
@@ -52,3 +47,11 @@ accessed, so there is little to no performance hit to offering so many features 
 - [x] Feature: `tim.utils`: Many various utilities and helpers.
 - [x] Feature: View code coverage with istanbul.
 - [x] Test: Unit tests for working features in tim, tim-cli, and tim.boot.
+- [x] Test: Create example of multiple boots with extends with `.brikcssrc.js`:
+	- [x] Refactor: Move `_tim.boot` to `_brik`.
+	- [x] Feature: In `boot/index.js`, allow for:
+		- `_brik.extends`: Compiles a brik/directory of files.
+		- `_brik.files`: Compiles files without any other configuration.
+	- [x] Test: Update "multiples" test to work by extending files.
+	- [x] Refactor: Revisit merging of options?
+	- [x] Refactor: Combine options and data into one config object?

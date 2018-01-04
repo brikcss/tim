@@ -1,0 +1,8 @@
+## -------------------------------------------------------------------------------------------------
+# .eslintignore
+# -------------
+# @author  brikcss <https://github.com/brikcss>
+# @description  Files to ignore by [eslint](https://eslint.org/docs/user-guide/configuring#ignoring-files-and-directories).
+## -------------------------------------------------------------------------------------------------
+
+<%= brik.eslintIgnore || 'build/*.js\ndist/*.js' %>

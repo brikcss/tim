@@ -40,19 +40,19 @@ module.exports = userOptions => {
 			// @property  {object}  [on]  Exposes certain functions to allow you to modify certain behavior.
 			on: {
 				// @property  {function}  [getBrikRoot]  Returns the root path for a brik's filepath or group of filepaths.
-				getBrikRoot: (brikFilepaths, { options, data, tim }) => {
+				getBrikRoot: (brikFilepaths, { data, options, tim }) => {
 					return tim.utils.getRoot(
 						tim.path.resolve(options.cwd, brikFilepaths instanceof Array ? brikFilepaths[0] : brikFilepaths)
 					);
 				},
 				// @property  {function}  [overwriteFile]  Determines whether to overwrite existing file. Must return boolean.
-				overwriteFile: (file, { options, data, tim }) => false,
+				overwriteFile: (file, { data, options, tim }) => false,
 				// @property  {function}  [rename]  Allows you to modify the output filepath. Must return a string, which is assigned to file.out.
-				rename: (file, { options, data, tim }) => file.out,
+				rename: (file, { data, options, tim }) => file.out,
 				// @property  {function}  [compileOrSkip]  Determines whether to compile (true) or skip (false) the file. Must return boolean.
-				compileOrSkip: (file, { options, data, tim }) => true,
+				compileOrSkip: (file, { data, options, tim }) => true,
 				// @property  {function}  [jsonMerge]  Determines how a json merge is done. Return value is the merged object, which is assigned to file.content and converted to a string.
-				jsonMerge: (file, { options, data, tim }) => {
+				jsonMerge: (file, { data, options, tim }) => {
 					// Must return file.content as an object.
 					return file.overwrite
 						? Object.assign({}, file.existing, file.content)

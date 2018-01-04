@@ -1,4 +1,4 @@
-module.exports = (brik, data, tim) => {
+module.exports = (data, options, tim) => {
 	return {
 		name: '@brikcss-test/code-linters',
 		precommitHook: true, // boolean or object (object is passed as hook settings).

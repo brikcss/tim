@@ -31,7 +31,10 @@
 		"tim": "bin/tim-cli.js"
 	},
 	"main": "lib/tim/index.js",
-	"files": ["lib/", "bin/"],
+	"files": [
+		"lib/",
+		"bin/"
+	],
 	"scripts": {
 		"test:unit": "mocha './{lib,bin}/**/*.spec.js' --reporter=mocha-better-spec-reporter --colors",
 		"test:coverage": "nyc mocha './lib/**/*.spec.js' --reporter=mocha-better-spec-reporter --colors",

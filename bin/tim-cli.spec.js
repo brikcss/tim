@@ -9,6 +9,7 @@ describe('tim-cli', () => {
 
 	it('runs the root command', () => {
 		const root = tim.shell.exec(`${timPath} root ./bin/tim-cli.js`).stdout;
+		tim.assert.equal(typeof root, 'string');
 		tim.assert.equal(root.trim(), './bin');
 	});
 
