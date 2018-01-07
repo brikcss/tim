@@ -9,14 +9,9 @@ module.exports = {
 		extends: ['./commitlint', './code-linters'],
 		output: '.temp/extends1'
 	},
-	_briks: {
-		'@brikcss-test/code-linters': {
+	_briks: () => {
+		return {
 			output: '.temp/extends'
-		},
-		'@brikcss-test/commitlint': (data, brik, tim) => {
-			return {
-				output: '.temp/extends'
-			};
-		}
+		};
 	}
 };

@@ -2,6 +2,7 @@
 
 ## Next / in progress
 
+- [ ] Refactor: `package.{xjs,xjson}` should be passed `(brik, data)` instead of `(data, brik)`. This should also be changed anywhere else data and brik is passed (brik should come first and be named brik instead of options).
 - [ ] Create each of the following "briks" / repos:
 	- [ ] Git commit message linting (commitlint)
 	- [ ] Code linting:
@@ -34,6 +35,7 @@
 
 ## Done
 
+- [x] Feature: Allow `config._briks` and `config._briks[<brik name>]` to be a function that is called on compile of each brik.
 - [x] Feature: `tim.boot`: boot up / scaffold / reboot files and/or projects.
 	- [x] Feature: `watch` files and "reboot" / recompile on change (alpha).
 	- [x] Feature: Compile via EJS or as JS modules (with .xjs or .xjson).
@@ -55,3 +57,4 @@ accessed, so there is little to no performance hit to offering so many features 
 	- [x] Test: Update "multiples" test to work by extending files.
 	- [x] Refactor: Revisit merging of options?
 	- [x] Refactor: Combine options and data into one config object?
+- [-] Refactor: `brik` object should _be_ `brik.options`, and all other properties (i.e., `root`, etc.) should be moved to `brik.meta`.

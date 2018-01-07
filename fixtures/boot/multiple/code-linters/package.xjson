@@ -22,22 +22,22 @@ module.exports = (data, brik) => {
 	}
 
 	// JS linter.
-	if (brik.js.enable) {
+	if (!brik.js.disable) {
 		pkg.devDependencies['@brikcss/eslint-config'] = '0.1.3';
 		pkg.devDependencies.eslint = '^4.9.0';
 
 		if (brik.watchTask) {
 			pkg.scripts['js:lint'] = `node_modules/.bin/eslint ${brik.js.source ||
-				'**/*.{' + brik.js.exts.join(',') + '}'} --format=stylish`;
+				'**/*{' + brik.js.exts.join(',') + '}'} --format=stylish`;
 			pkg.scripts['js:lint:watch'] = `chokidar ${brik.js.source ||
-				'**/*.{' +
+				'**/*{' +
 					brik.js.exts.join(',') +
 					'}'} --command 'node_modules/.bin/eslint {path} --format=stylish && npm run postjs:lint'`;
 		}
 	}
 
 	// CSS linter.
-	if (brik.css.enable) {
+	if (!brik.css.disable) {
 		pkg.devDependencies['stylelint-config-recommended'] = '1.0.0';
 		pkg.devDependencies.stylelint = '8.2.0';
 
@@ -50,10 +50,10 @@ module.exports = (data, brik) => {
 
 		if (brik.watchTask) {
 			pkg.scripts[`${brik.css.mode}:lint`] = `node_modules/.bin/stylelint ${brik.css.source ||
-				'**/*.{' + brik.css.exts.split(',') + '}'} --format=stylish`;
+				'**/*{' + brik.css.exts.join(',') + '}'} --format=stylish`;
 			pkg.scripts[`${brik.css.mode}:lint:watch`] = `chokidar ${brik.css.source ||
-				'**/*.{' +
-					brik.css.exts.split(',') +
+				'**/*{' +
+					brik.css.exts.join(',') +
 					'}'} --command 'node_modules/.bin/eslint {path} --format=stylish && npm run postjs:lint'`;
 		}
 	}
