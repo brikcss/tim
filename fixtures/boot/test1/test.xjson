@@ -1,4 +1,4 @@
-module.exports = data => {
+module.exports = ({ data }, tim) => {
 	const myData = {
 		one: 1,
 		two: 2,

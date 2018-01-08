@@ -1,6 +1,6 @@
-module.exports = (data, options, tim) => {
+module.exports = (brik, tim) => {
 	return {
-		name: data.name || 'Function Test',
+		name: brik.name || 'Function Test',
 		functionLoaded: true,
 		testPath: tim.path.join(process.cwd(), 'my/test/path'),
 		array: [111],

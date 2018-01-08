@@ -1,4 +1,4 @@
-module.exports = data => {
+module.exports = brik => {
 	const myData = {
 		one: 11111,
 		b: 'bbbbb',

@@ -1,4 +1,4 @@
-module.exports = (data, brik) => {
+module.exports = (brik, tim) => {
 	// pkg defaults.
 	let pkg = {
 		scripts: {},

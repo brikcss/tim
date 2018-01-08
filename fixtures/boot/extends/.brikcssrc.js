@@ -7,15 +7,15 @@
 module.exports = {
 	_brik: {
 		extends: ['./commitlint', './code-linters'],
-		output: '.temp/extends1'
+		output: '../../../.temp/extends1'
 	},
 	_briks: {
 		'@brikcss-test/code-linters': {
-			output: '.temp/extends'
+			output: '../../../.temp/extends'
 		},
-		'@brikcss-test/commitlint': (data, brik, tim) => {
+		'@brikcss-test/commitlint': (brik, tim) => {
 			return {
-				output: '.temp/extends'
+				output: '../../../.temp/extends'
 			};
 		}
 	}

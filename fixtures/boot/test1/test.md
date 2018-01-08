@@ -1,1 +1,1 @@
-# <%= brik.name || 'brikcss component' %>
+# <%= brik.data.name || 'brikcss component' %>

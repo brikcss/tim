@@ -38,7 +38,8 @@
 	"scripts": {
 		"test:unit": "mocha './{lib,bin}/**/*.spec.js' --reporter=mocha-better-spec-reporter --colors",
 		"test:coverage": "nyc mocha './lib/**/*.spec.js' --reporter=mocha-better-spec-reporter --colors",
-		"precommit--WIP": "node ./lib/hooks/lint-staged-files.js --ignore=css --js=.js,.xjs,.xjson --json=.json"
+		"precommit--WIP": "node ./lib/hooks/lint-staged-files.js --ignore=css --js=.js,.xjs,.xjson --json=.json",
+		"test": "echo \"I am a test. undefined!\""
 	},
 	"devDependencies": {
 		"@brikcss/eslint-config": "0.1.3",
