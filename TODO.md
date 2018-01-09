@@ -3,6 +3,12 @@
 ## Next / in progress
 
 - [ ] Refactor: boot a brik:
+	- [x] Rename .brikcssrc to .brikrc.
+	- [ ] Brik data should be passed to user as follows:
+		- `brik` = merge({}, `data`) flattened / merged.
+		- `brik._options` = merge(`brik._brik`, `brik._briks[brikName]`, `user options`)
+		- `brik._file` = file object & metadata.
+		- `tim` = `tim`.
 	1. Load entry brik file with tim.config.load().
 	1. buildABrik():
 		1. If it's the entry brik, set defaults.
