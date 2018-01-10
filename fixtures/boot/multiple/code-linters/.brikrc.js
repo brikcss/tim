@@ -1,4 +1,4 @@
-module.exports = (brik, tim) => {
+module.exports = () => {
 	return {
 		_brik: {
 			name: '@brikcss-test/code-linters',

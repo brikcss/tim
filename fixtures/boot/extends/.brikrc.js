@@ -13,7 +13,7 @@ module.exports = {
 		'@brikcss-test/code-linters': {
 			output: '../../../.temp/extends'
 		},
-		'@brikcss-test/commitlint': (brik, tim) => {
+		'@brikcss-test/commitlint': (brik, { options, file, tim }) => {
 			return {
 				output: '../../../.temp/extends'
 			};

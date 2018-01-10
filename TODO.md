@@ -2,42 +2,6 @@
 
 ## Next / in progress
 
-- [ ] Refactor: boot a brik:
-	- [x] Rename .brikcssrc to .brikrc.
-	- [ ] Brik data should be passed to user as follows:
-		- `brik` = merge({}, `data`) flattened / merged.
-		- `brik._options` = merge(`brik._brik`, `brik._briks[brikName]`, `user options`)
-		- `brik._file` = file object & metadata.
-		- `tim` = `tim`.
-	1. Load entry brik file with tim.config.load().
-	1. buildABrik():
-		1. If it's the entry brik, set defaults.
-		1. If it's not the entry brik (an extended brik):
-			1. Use the entry brik for defaults.
-			1. Merge with `_briks[<brik name>]`.
-		1. Iterate through brik.files:
-			1. Form correct absolute paths.
-			1. Clone any repos.
-		1. Iterate through brik.extends:
-			1. Load config for extended / child brik.
-			1. Recursively call buildABrik().
-			1. Add extended child to an extends map so it doesn't get extended again.
-	1. Compile each brik with compileABrik():
-		1. Get absolute filepaths with globby or manually, if globby is disabled.
-		1. Compile each file.
-		1. Notify user.
-	1. compileAFile():
-		1. Passes {options, data, meta, file, tim} to each compile function.
-	1. brik object is formed:
-		```js
-		let brik = {
-			file: {},
-			meta: {},
-			options: {},
-			data: {},
-			results: {}
-		};
-		```
 - [ ] Create each of the following "briks" / repos:
 	- [x] Git commit message linting (commitlint)
 	- [x] Code linting:
@@ -58,7 +22,14 @@
 ## Committed
 
 - [ ] Feature: Add puppeteer browser / UI regression testing.
-- [ ] Feature: Extend briks. `_brik.extends` behaves just like `_brik.files` except that it recursively compiles briks, and each "child" brik inherits the config from its "parent".
+- [ ] Feature: Extend briks. `_brik.extends` behaves just like `_brik.files` except that it recursively compiles briks, and each "child" brik inherits the config from its "parent". Instructions:
+	- [ ] Briks should be extended in the `bootABrik()` function, when it's not the entry brik (there is a placeholder already there).
+	- [ ] Extended briks and brik files should be compiled separately. Extended briks simply call `bootABrik()` recursively, once the config is loaded for that brik.
+	- [ ] Make sure an extends map exists in the cache to prevent calling the same extended brik twice, which would cause a never-ending loop.
+	- [ ] brik.data should be compiled per each extended brik, and should be merged as follows: merge(`cache.entryBrik.data or brik.data (should be parent brik's config)`, `brik._brik (brik defaults)`, `brik._briks[brikName] (user config)`, `cache.userBrik (user passed config)`)
+- [ ] Feature: Decide what metadata would be helpful to be included per each brik AND per each file.
+- [ ] Test: Audit return data and decide if it would be helpful to refactor how we return data on briks, files, etc. Consider attaching results to a `result` property.
+- [ ] Test: Audit all potential filepaths (i.e., files, extends, ignore, etc.) to make sure they are being passed as absolute paths, when necessary. The exceptions being files like ignore files, which should be globs.
 - [ ] Feature: Complete the brik "watcher" to reboot on changes. See `boot/index.js` file in commit `711e21c3816b5db7364606052b8628928b1a63d5` for old `watchFiles()` function.
 - [ ] Test: Add unit test to conditionally modify options.files in a brik's options.
 - [ ] Documentation: Document `boot` task.
@@ -75,6 +46,13 @@
 
 ## Done
 
+- [x] Refactor: boot a brik:
+	- [x] Rename .brikcssrc to .brikrc.
+	- [x] Brik data should be passed to user as follows:
+		- `brik` = merge({}, `data`) flattened / merged.
+		- `brik._options` = merge(`brik._brik`, `brik._briks[brikName]`, `user options`)
+		- `brik._file` = file object & metadata.
+		- `tim` = `tim`.
 - [x] Feature: Allow `config._briks` and `config._briks[<brik name>]` to be a function that is called on compile of each brik.
 - [x] Feature: `tim.boot`: boot up / scaffold / reboot files and/or projects.
 	- [x] Feature: `watch` files and "reboot" / recompile on change (alpha).

@@ -1,4 +1,4 @@
-module.exports = (brik, tim) => {
+module.exports = (brik, { options }) => {
 	let json = {
 		scripts: {
 			gcz:
@@ -11,7 +11,7 @@ module.exports = (brik, tim) => {
 		}
 	};
 
-	if (brik.enablePrompt) {
+	if (options.enablePrompt) {
 		json.config = {
 			commitizen: {
 				path: '@commitlint/prompt'
