@@ -1,5 +1,7 @@
 # Tim "The Toolman"
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/brikcss/tim.svg)](https://greenkeeper.io/)
+
 > Tim "The Toolman" is a front end task runner / utility toolbelt which [brikcss](https://github.com/brikcss/) uses in developing their brikcss front end components. It offers many node and cli tools to perform many repetitive tasks.
 
 <!-- Shields. -->
